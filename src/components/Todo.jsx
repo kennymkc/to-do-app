@@ -1,4 +1,4 @@
-export default function Todo({ todo, index, completeTodo }) {
+export default function Todo({ todo, index, completeTodo, removeTodo }) {
   return (
     <div
       className="todo"
@@ -7,6 +7,7 @@ export default function Todo({ todo, index, completeTodo }) {
       {todo.text}
       <div>
         <button onClick={() => completeTodo(index)}>Complete</button>
+        <button onClick={() => removeTodo(index)}>x</button>
       </div>
     </div>
   );

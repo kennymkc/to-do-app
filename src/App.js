@@ -29,7 +29,13 @@ function App() {
     const completedTodos = [...todos];
     completedTodos[index].isCompleted = true;
     setTodos(completedTodos)
-  }
+  };
+
+  const removeTodo = index => {
+    const newTodos = [...todos];
+    newTodos.splice(index, 1);
+    setTodos(newTodos);
+  };
 
   return (
     <div className="app">
@@ -40,6 +46,7 @@ function App() {
             index={index}
             todo={todo}
             completeTodo={completeTodo}
+            removeTodo={removeTodo}
           />
         ))}
         <TodoForm addTodo={addTodo} />
